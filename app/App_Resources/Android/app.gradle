@@ -1,0 +1,27 @@
+// Add your native dependencies here:
+android {
+  compileSdkVersion 27
+  buildToolsVersion '27.0.3'
+
+  defaultConfig {
+    generatedDensities = []
+    applicationId = "org.nativescript.application"
+  }
+  aaptOptions {
+    additionalParameters "--no-version-vectors"
+  }
+  dependencies {
+    compile 'com.android.support:appcompat-v7:26.0.0'
+    compile 'com.android.support:support-v4:26.0.0'
+  }
+  configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '25.3.0'
+            }
+        }
+    }
+}
+}

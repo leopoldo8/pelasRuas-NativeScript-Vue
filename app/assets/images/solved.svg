@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Explore" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="explore-feed" transform="translate(-168.000000, -316.000000)">
+            <g id="icon/resolvido" transform="translate(151.000000, 316.000000)">
+                <g id="Group-4" transform="translate(17.000000, 0.000000)">
+                    <path d="M20,40 C31.045695,40 40,31.045695 40,20 C40,8.954305 31.045695,0 20,0 C8.954305,0 0,8.954305 0,20 C0,31.045695 8.954305,40 20,40 Z" id="Oval-2" fill="#FFE82A"></path>
+                    <polyline id="Page-1" stroke="#151316" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="12 21.3761 17.954 27.3011 29.307 13.0001"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
