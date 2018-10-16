@@ -1,0 +1,24 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "Viaduto do metrô da Cavalhada cada vez mais depredado",
+            "distance": 100,
+            "time": "2018-10-16T12:00:00",
+            "followers": 10,
+            "comments": 124,
+            "owner": "Paulo Silva",
+            "solved": true
+        },
+        {
+            "id": 2,
+            "title": "Estacionamento perigoso, segurança de embarque e desenbarque comprometida",
+            "distance": 100,
+            "time": "2018-10-05T12:00:00",
+            "followers": 69,
+            "comments": 340,
+            "owner": "Marcela Bonaz",
+            "solved": false
+        }
+    ]
+}
