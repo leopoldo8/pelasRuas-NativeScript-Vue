@@ -1,4 +1,4 @@
-import data from '../../mock.json';
+import data from '~/config/mock.json';
 
 const state = {
     postsList: []

@@ -18,7 +18,7 @@
         <PostsView v-bind:data="postList" />
       </template>
       <template slot="secondTab-content" >
-        <MapView :latitude="latitude" :longitude="longitude"  :zoom="zoom" :bearing="bearing" :tilt="tilt" :padding="padding" :minZoom="minZoom" :maxZoom="maxZoom" @mapReady="mapReady" @markerSelect="onMarkerSelect" />
+        <MapView class="mapView-ndTab" :latitude="latitude" :longitude="longitude"  :zoom="zoom" :bearing="bearing" :tilt="tilt" :padding="padding" :mapAnimationsEnabled="mapAnimationsEnabled" :minZoom="minZoom" :maxZoom="maxZoom" @mapReady="mapReady" @markerSelect="onMarkerSelect" />
       </template>
     </tabViewBorder>
   </Page>
@@ -28,9 +28,13 @@
   //libs
   import { Position, Marker } from "nativescript-google-maps-sdk";
   import { mapActions, mapGetters } from 'vuex';
+
   //components
-  import TabViewBorder from '../tabViewTemplate';
-  import PostsView from '../posts';
+  import TabViewBorder from '~/components/tabViewTemplate';
+  import PostsView from '~/components/posts';
+
+  //config
+  import MapStyle from '~/config/mapStyle.json';
 
   export default {
     name: 'Home',
@@ -40,15 +44,16 @@
     },
     data () {
       return {
-        latitude:  0,
-        longitude: 0,
-        zoom: 15,
+        latitude: -33.86,
+        longitude: 151.20,
+        zoom: 8,
         minZoom: 0,
         maxZoom: 22,
-        bearing: 0,
-        tilt: 0,
+        bearing: 180,
+        tilt: 35,
         padding: [40, 40, 40, 40],
         mapView: null,
+        mapAnimationsEnabled: true
       };
 	  },
     computed: {
@@ -62,6 +67,7 @@
       ]),
       mapReady(args) {
         this.mapView = args.object
+        this.mapView.setStyle(MapStyle);
         this.mapView.infoWindowTemplate = `
           <StackLayout orientation="vertical" width="200">
             <Label text="{{title}}" className="title"/>
@@ -109,5 +115,9 @@
 <style lang="scss" scoped>
   .home-header {
     margin: 0 17.5px;
+  }
+
+  .mapView-ndTab {
+    filter: grayscale(100%);
   }
 </style>

@@ -4,20 +4,22 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 import Home from '../components/pages/Home';
+import Login from '../components/pages/Login';
 
 const router = new VueRouter({
   routes: [
     {
       path: '/home',
-      component: Home,
-      meta: {
-        title: 'Home',
-      }
+      component: Home
     },
-    {path: '*', redirect: '/home'},
+    {
+      path: '/login',
+      component: Login
+    },
+    {path: '*', redirect: '/login'},
   ],
 });
 
-router.replace('/home');
+router.replace('/login');
 
 export default router;

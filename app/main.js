@@ -1,3 +1,5 @@
+import * as application from 'tns-core-modules/application';
+
 import * as platform from 'tns-core-modules/platform';
 
 import Vue from 'nativescript-vue';
@@ -16,8 +18,27 @@ if (platform.isIOS) {
 }
 
 //register plugins
+Vue.registerElement('MapView', () => require('nativescript-google-maps-sdk').MapView);
+const SocialLogin = require('nativescript-social-login').SocialLogin;
 
-Vue.registerElement('MapView', ()=> require('nativescript-google-maps-sdk').MapView)
+if (application.android) {
+  application.android.on(application.AndroidApplication.activityCreatedEvent, (event) => {
+      let result = SocialLogin.init({
+          activity: event.activity,
+          google: {
+          initialize: true
+          },
+          facebook: {
+          initialize: false
+          }
+      });
+      console.log(result);
+  });
+};
+
+SocialLogin.addLogger(function (msg, tag) {
+  console.log('[nativescript-social-login]: (' + tag + '): ' + msg);
+});
 
 new Vue({
 

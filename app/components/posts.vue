@@ -51,7 +51,7 @@ export default {
             var dateDiff = new Date(new Date() - new Date(post.time));
             var yearsDiff = dateDiff.getUTCFullYear() - 1970;
             var monthsDiff = dateDiff.getUTCMonth();
-            var daysDiff = dateDiff.getUTCDate();
+            var daysDiff = dateDiff.getUTCDate() -1;
 
             if (yearsDiff === 1) return yearsDiff + ' ano';
             else if (yearsDiff != 0) return yearsDiff + ' anos';
